@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 100%;
+            height: 100px;
+            background-color: gray;
+            border-radius: 30px;
+        }
+        #d{
+            border-radius: 25px;
+            display: inline-block;
+            width: 480px;
+            height: 20px;
+        }
+        #dat{
+            position: relative;
+            left: 900px;
+            display: inline-block;
+            height: 25px;
+        }
+        #e{
+            border-radius: 25px;
+            display: inline-block;
+            width: 1000px;
+            height: 40px;
+        }
+        #f{
+            position: relative;
+            left: 400px;
+            
+            display: inline-block;
+            width: 70px;
+            border-radius: 25px;
+        }
+        #main1{
+            width: 100%;
+            height: 200px;
+            background-color: gray;
+        }
+       
+            </style>
+</head>
+<body>
+    <div id="main">
+        <br>
+    
+    
+        <form>
+    
+            <input placeholder="Tittle" id="d">
+            <input type="date" min="2024-01-24"id="dat"> <br>
+            <input placeholder="description"  id="e">
+            <input type="button" id="f" value="save" onclick="save()">
+            </form>
+            </div>
+            <br>
+
+            
+            <div>
+               <input type="button" value="SUN" id="hig" onclick="highlight()">
+               <input type="button" value="MON" id="hig1" onclick="highlight1()">
+               <input type="button" value="TUE" id="hig2" onclick="highlight2()">
+               <input type="button" value="WED" id="hig3" onclick="highlight3()">
+               <input type="button" value="THR" id="hig4" onclick="highlight4()">
+               <input type="button" value="FRI" id="hig5" onclick="highlight5()">
+               <input type="button" value="SAT" id="hig6" onclick="highlight6()">
+            </div>
+            <div id="main1">
+                <h1 id="heading"></h1>
+                <h2 id="des"></h2>
+                <h1 id="dat2"></h1>
+                <input type="button" value="DELETE" id="sub" onclick="delet()">
+            </div>
+            
+            <script>
+                
+                function save(){
+                    var a=document.getElementById("d").value
+                    var b=document.getElementById("e").value
+                    document.getElementById("heading").innerHTML=a
+                    document.getElementById("des").innerHTML=b
+                    var date1=document.getElementById("dat").value
+                var date=new Date(date1);
+                var week=date.getDay();
+                
+                if(week==0){
+                    document.getElementById("hig").style.backgroundColor="red"
+                }
+                else if(week==1){
+                    document.getElementById("hig1").style.backgroundColor="red"
+                }
+                else if(week==2){
+                    document.getElementById("hig2").style.backgroundColor="red"
+                }
+                else if(week==3){
+                    document.getElementById("hig3").style.backgroundColor="red"
+                }
+                else if(week==4){
+                    document.getElementById("hig4").style.backgroundColor="red"
+                }
+                else if(week==5){
+                    document.getElementById("hig5").style.backgroundColor="red"
+                }
+                else {
+                    document.getElementById("hig6").style.backgroundColor="red"
+                }
+                
+
+             }
+                function delet(){
+                    document.getElementById("heading").style.display="none"
+                    document.getElementById("des").style.display="none"
+                }
+                
+                
+         </script>
+            
+       
+    
+    
+</body>
+</html>
+
